@@ -1,0 +1,70 @@
+import { Permission } from './permission';
+
+export const DEFAULT_ROLES = {
+  admin: {
+    description: '...',
+    permissions: [
+      Permission.UserCreate,
+      Permission.UserRead,
+      Permission.UserUpdate,
+      Permission.UserDelete,
+      Permission.RoleCreate,
+      Permission.RoleRead,
+      Permission.RoleUpdate,
+      Permission.RoleDelete,
+      Permission.RoleAssign,
+      Permission.CustomerCreate,
+      Permission.CustomerRead,
+      Permission.CustomerUpdate,
+      Permission.CustomerDelete,
+      Permission.DealCreate,
+      Permission.DealRead,
+      Permission.DealUpdate,
+      Permission.DealDelete,
+      Permission.ActivityCreate,
+      Permission.ActivityRead,
+      Permission.ActivityUpdate,
+      Permission.ActivityDelete,
+    ],
+  },
+  manager: {
+    description: '...',
+    permissions: [
+      Permission.UserRead,
+      Permission.RoleRead,
+      Permission.CustomerCreate,
+      Permission.CustomerRead,
+      Permission.CustomerUpdate,
+      Permission.CustomerDelete,
+      Permission.DealCreate,
+      Permission.DealRead,
+      Permission.DealUpdate,
+      Permission.DealDelete,
+      Permission.ActivityCreate,
+      Permission.ActivityRead,
+      Permission.ActivityUpdate,
+      Permission.ActivityDelete,
+    ],
+  },
+  sales: {
+    description: '...',
+    permissions: [
+      Permission.CustomerCreate,
+      Permission.CustomerRead,
+      Permission.CustomerUpdate,
+      Permission.DealCreate,
+      Permission.DealRead,
+      Permission.DealUpdate,
+      Permission.ActivityCreate,
+      Permission.ActivityRead,
+      Permission.ActivityUpdate,
+    ],
+  },
+} as const;
+
+export const SUPER_ADMIN_PERMISSIONS = [
+  Permission.TenantCreate,
+  Permission.TenantRead,
+  Permission.TenantUpdate,
+  Permission.TenantDelete,
+];
